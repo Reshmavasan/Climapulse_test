@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/users";  // port 5000- as set in mock API
+const BASE_URL = "http://localhost:3000/users";  // mock API port 3000
 
 export async function fetchUsers() {
   const resp = await fetch(BASE_URL);
