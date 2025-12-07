@@ -1,0 +1,128 @@
+.navbar {
+    width: 100%;
+    max-width: 1800px;
+    height: 88px;
+    background: #181818;
+    padding: 24px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo-box {
+    width: 40px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 6px;
+}
+
+.logo-text {
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    height: 20px;
+}
+
+.nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.home-link, .archive-link, .messages-link {
+    width: 79px;
+    padding-left: 2px;
+    padding-right: 4px;
+}
+
+.home-link .icon-box,
+.archive-link .icon-box,
+.messages-link .icon-box {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-link .icon-box img,
+.archive-link .icon-box img,
+.messages-link .icon-box img {
+    width: 20px;
+    height: 20px;
+}
+
+.home-text,
+.archive-text,
+.messages-text {
+    font-size: 14px;
+    padding-top: 1px;
+    color: #9E9E9E;
+}
+
+.nav-link.active .link-text {
+    color: #FFFFFF !important;
+}
+
+.active-bar {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 96px;
+    height: 1px;
+    background: #1473CC;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1.1;
+}
+
+.user-name {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.user-role {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: #9E9E9E;
+}
+
+.user-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 16px;
+    }
+}
