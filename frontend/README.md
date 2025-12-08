@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Climapulse Frontend Assessment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based web application built as part of the Climapulse assessment.  
+The project includes a mock API powered by **json-server** and a frontend built with **Create React App**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Prerequisites
 
-### `npm start`
+Make sure the following are installed on your system:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Node.js** (recommended: `20.5.1`)
+- **npm** (recommended: `9.8.0`)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+These are required to run both the React application and the mock API.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## GitHub Repository
 
-### `npm run build`
+Clone the project from: https://github.com/Reshmavasan/Climapulse_test.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Setup mock API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+It is located in the `/api` folder. To start the API, go to api folder and run:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+npm run dev
+```
 
-### `npm run eject`
+Once running, the API will be available at http://localhost:3000/users and can test it using
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+curl http://localhost:3000/users
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Frontend Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The react application is located in the `/frontend` folder. To start the the react application, go to frontend folder and run:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+npm start
+```
 
-## Learn More
+It runs on http://localhost:5000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Build Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To make production build run:
 
-### Code Splitting
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To start production build you need to install *serve* and run it:
 
-### Analyzing the Bundle Size
+```bash
+npm install serve
+serve -s build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# The following features have been included in this React web application
 
-### Making a Progressive Web App
+web application implementation task with 2 pages: "List Users Page" and "User Detail Page".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+"List Users Page" has following implementation:
+- List the users by fetching from db.json as per the design.
+- Serach the users based on name.
+- Filter the users based on Type, State and Company(on click of corresponding arrow button).
+- Create new user with default values which gets appended at the end of the list.
+- Pagination to view the users list in different pages.
+- On click of any user and also on click of arrow at the end of each user row, navigate to "User Detail Page".
 
-### Advanced Configuration
+"User Detail Page" has following implementation:
+- Display details of particular user based on the design given.
+- On click of "Delete user" button, delete the particular user from the list and navigate to "List Users Page".
+- On click of "Edit" button, display modal window to edit the details of the user. I have made few design changes from the given design to make it more user friendly.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Also in the Navigation bar on top, I have added Home tab to navigate to "List Users Page". On click of Archive and Messages tab, it displays Page not available pop up and returns to Home tab.
