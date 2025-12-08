@@ -1,5 +1,7 @@
-const BASE_URL = "http://localhost:3000/users";  // mock API port 3000
+const API_PORT = 3000;  // json-server port
+const BASE_URL = `http://localhost:${API_PORT}/users`;
 
+// Retrieves the complete list of users
 export async function fetchUsers() {
   const resp = await fetch(BASE_URL);
   if (!resp.ok) {
@@ -8,6 +10,7 @@ export async function fetchUsers() {
   return resp.json();
 }
 
+// Fetch the user details by ID
 export async function fetchUserById(id) {
   const resp = await fetch(`${BASE_URL}/${id}`);
   if (!resp.ok) {
@@ -16,6 +19,7 @@ export async function fetchUserById(id) {
   return resp.json();
 }
 
+// Delete the existing user
 export async function deleteUser(id) {
   const resp = await fetch(`${BASE_URL}/${id}`, { method: "DELETE" });
   if (!resp.ok) {
@@ -24,6 +28,7 @@ export async function deleteUser(id) {
   return resp.json();
 }
 
+// Add new user details to the database
 export async function addUser(user) {
   const resp = await fetch(BASE_URL, {
     method: "POST",
@@ -34,6 +39,7 @@ export async function addUser(user) {
   return resp.json();
 }
 
+// Update the existing user details
 export async function updateUser(id, user) {
   const resp = await fetch(`${BASE_URL}/${id}`, {
     method: "PUT",

@@ -4,7 +4,7 @@ import { fetchUserById, deleteUser, updateUser } from "../api";
 import Layout from "../components/Layout";
 import EditModal from "../components/EditModal";
 
-// Icons
+// Images
 import editIcon from "../images/edit.png";
 import trashIcon from "../images/delete.png";
 
@@ -17,7 +17,7 @@ function UserDetailPage() {
   const [error, setError] = useState(null);
 
   // Modal state
-  const [editModal, setEditModal] = useState(null); // 'personal' | 'company' | null
+  const [editModal, setEditModal] = useState(null);   // 'personal' | 'company' | null
   const [editData, setEditData] = useState({});
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function UserDetailPage() {
       .catch(() => setError("Failed to load user."));
   }, [id]);
 
-  const handleDelete = async () => {
+  const handleDelete = async () => {                // function to delete user
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
       await deleteUser(id);
@@ -36,9 +36,8 @@ function UserDetailPage() {
     }
   };
 
-  const handleUpdate = async () => {
+  const handleUpdate = async () => {                // function to update user details
     try {
-      // Merge updated section with original user
       const updatedUser = await updateUser(id, { ...user, ...editData });
       setUser(updatedUser);
       setEditModal(null);
@@ -52,7 +51,6 @@ function UserDetailPage() {
 
   return (
     <Layout>
-      {/* USER HEADER */}
       <div className="user-title-container">
         <div className="userinfo">
           <span className="username">
@@ -75,7 +73,7 @@ function UserDetailPage() {
         </button>
       </div>
 
-      {/* PERSONAL INFO */}
+      {/* conatiner to display Personal information of the user */}
       <div className="detail-card">
         <div className="detail-card-header">
           <span className="card-title">Personal information</span>
@@ -125,7 +123,7 @@ function UserDetailPage() {
         </div>
       </div>
 
-      {/* COMPANY INFO */}
+      {/* conatiner to display Company information of the user */}
       <div className="detail-card">
         <div className="detail-card-header">
           <span className="card-title">Company</span>
@@ -181,7 +179,7 @@ function UserDetailPage() {
         </div>
       </div>
 
-      {/* EDIT MODAL */}
+      {/* EditModal conatiner */}
       {editModal && (
         <EditModal
           title={editModal === "personal" ? "Edit Personal Information" : "Edit Company Information"}

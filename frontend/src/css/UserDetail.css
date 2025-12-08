@@ -219,7 +219,6 @@
     border-radius: 8px;
     border: none;
     cursor: pointer;
-    transition: background 0.2s ease;
 }
 
 @media (max-width: 768px) {

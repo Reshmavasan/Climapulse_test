@@ -35,6 +35,7 @@ function Layout({ children }) {
 
   return (
     <div style={pageContainerStyle}>
+      {/* Top navigation bar */}
       <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
       <div style={mainContainerStyle}>
         <div style={contentContainerStyle}>{children}</div>
