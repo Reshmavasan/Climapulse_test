@@ -35,7 +35,7 @@ function UsersListPage() {
       .catch(err => setError("Unable to load users."));
   }, []);
 
-  const handleCreateUser = async () => {
+  const handleCreateUser = async () => {        // function to create new user
     const newUser = {
       firstName: "New",
       lastName: "User",
@@ -53,7 +53,6 @@ function UsersListPage() {
     }
   };
 
-  // FILTERING
   const filteredUsers = users.filter(u => {
     const matchesSearch = `${u.firstName} ${u.lastName}`.toLowerCase().includes(search.toLowerCase());
     const matchesType = filterType === "All" ? true : u.type === filterType;
@@ -76,7 +75,7 @@ function UsersListPage() {
 
   return (
     <Layout>
-
+      {/* Search bar */}
       <div className="search-bar-container">
         <div className="search-input">
           <div className="search-bar">
@@ -90,7 +89,7 @@ function UsersListPage() {
           </div>
 
           <div className="filter-bar">
-            {/* TYPE */}
+            {/* Filter by Type */}
             <div className="filter-item">
               <span className="filter-label">Type</span>
               <span className="filter-value">
@@ -107,7 +106,7 @@ function UsersListPage() {
               )}
             </div>
 
-            {/* STATUS */}
+            {/* Filter by Status */}
             <div className="filter-item">
               <span className="filter-label">State</span>
               <span className="filter-value">
@@ -126,7 +125,7 @@ function UsersListPage() {
               )}
             </div>
 
-            {/* COMPANY */}
+            {/* Filter by Company name */}
             <div className="filter-item">
               <span className="filter-label">Company</span>
               <span className="filter-value">
@@ -153,7 +152,7 @@ function UsersListPage() {
 
       {error && <p className="error">{error}</p>}
 
-      {/* TABLE */}
+      {/* Table container to display the users */}
       <div className="table-container">
         <div className="table-content">
           <div className="table-header">
@@ -212,7 +211,7 @@ function UsersListPage() {
         </div>
       </div>
 
-      {/* PAGINATION */}
+      {/* Container to handle pagination */}
       <div className="pagination-container">
         <div className="icon-prev" onClick={handlePrevPage}>
           <img src={arrowLeftIcon} alt="previous" className="arrow-pagination-icon" />

@@ -11,7 +11,7 @@ import userAvatar from "../images/User.png";
 function Navbar({ activeTab, setActiveTab }) {
   const navigate = useNavigate();
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab) => {           // Function to handle the tab click on navigation tab
     setActiveTab(tab);
     if (tab === "home") {
       navigate("/users");

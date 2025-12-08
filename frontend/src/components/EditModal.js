@@ -1,13 +1,13 @@
 import React from "react";
 
-
 import closeIcon from "../images/Close.png";
 
+// Modal component for editing user information
 function EditModal({ title, fields, data, setData, onClose, onSubmit }) {
   return (
     <div className="edit-modal-overlay">
       <div className="edit-modal">
-        {/* Header */}
+
         <div className="edit-modal-header">
           <label>{title}</label>
           <button className="close-btn" onClick={onClose}>
@@ -15,7 +15,6 @@ function EditModal({ title, fields, data, setData, onClose, onSubmit }) {
           </button>
         </div>
 
-        {/* Body */}
         <div className="edit-modal-body">
           {fields.map((field) => (
             <div key={field.key}>
@@ -36,7 +35,6 @@ function EditModal({ title, fields, data, setData, onClose, onSubmit }) {
           ))}
         </div>
 
-        {/* Footer */}
         <div className="edit-modal-footer">
           <button className="update-btn" onClick={onSubmit}>
             Update Information
