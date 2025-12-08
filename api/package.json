@@ -2,7 +2,7 @@
   "name": "api",
   "description": "Mock API setup with json-server.",
   "scripts": {
-    "dev": "json-server --watch db.json"
+    "dev": "json-server --watch db.json --port 3000"
   },
   "devDependencies": {
     "json-server": "0.17.4"
